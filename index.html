@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/icone.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Codificador</title>
+</head>
+
+<body>
+  <!-- Section container -->
+  <section class="container">
+    <form>
+      <!--Título-->
+      <h1>Codificador e Decodificador de mensagens</h1>
+      <!--Orientação de mensagem desejada-->
+      <p class="msg" id="msgg">Digite a mensagem e escolha a opção desejada</p>
+      <div class="textarea_container">
+        <!--Caixa da mensagem para escrever-->
+        <div class="text_container">
+          <!--Caixa e texto de entrada -->
+          <textarea class="text" id="entrada" cols="50" rows="4" placeholder="Escreva aqui :)"></textarea>
+        </div>
+        <!--Caixa da mensagem para ler-->
+        <div class="view_container">
+          <!--Caixa e texto de saída-->
+          <output class="saida">
+            <!--Edição do texto da caixa de mensagem pra ler-->
+            <div id="resposta" class="resposta">Leia aqui :)</div>
+          </output>
+        </div>
+        <form>
+          <!--Estilização das escolhas método/cifra/base-->
+          <div class="escolhas">
+            <!--Caixa de método-->
+            <fieldset class="field_metodo">
+              <!--Caixa de seleção do método-->
+              <select class="metodo" required>
+                <option>Escolha o método</option>
+                <option>Cifra de Cesar</option>
+                <option>Base 64</option>
+              </select>
+            </fieldset>
+
+            <!--Div do n21 da cifra de césar-->
+            <div class="passo">
+              <input id="chave" type="range" value="21" min="1" max="99"
+                oninput="this.nextElementSibling.value = this.value" />
+              <output>21</output>
+            </div>
+            <!--Caixa codificar e decodificar-->
+            <fieldset class="tipo">
+              <!--Estilização do codificar e decodificar-->
+              <div class="coddecod">
+                <input type="radio" name="coddecod" value="msg-codigo" id="codificar" checked />
+                <label for="codificar">Codificar</label>
+              </div>
+              <div class="cod-decod">
+                <!--Estilização do codificar e decodificar-->
+                <input type="radio" name="coddecod" value="codigo-msg" id="decodificar" />
+                <label for="decodificar">Decodificar</label>
+              </div>
+            </fieldset>
+          </div>
+        </form>
+        <!--Botão de codificar/decodificar-->
+        <div class="botaoo">
+          <button class="enviar">Codificar</button>
+        </div>
+      </div>
+  </section>
+
+  <section class="rodape__container">
+    <!--Footer  -->
+    <footer>
+      <p>Copyright&copy;</p>
+      <p>18 de Outubro de 2022</p>
+      <p>Feito por Matheus Cardoso</p>
+      <p>E-mail: programatheus7@gmail.com</p>
+    </footer>
+
+  </section>
+  <script src="base.js"></script>
+  <script src="cifra.js"></script>
+  <script src="base64.js"></script>
+
+</body>
+
+</html>
